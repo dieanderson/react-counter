@@ -1,8 +1,10 @@
 import React, {useState} from "react"
 
+import Template from "./Template"
 import Counter from "./Counter"
 import Albums from "./Albums"
 import Users from "./Users"
+
 
 const pages = {
   albums: {
@@ -28,18 +30,14 @@ function App() {
     setPage(page)
   }
 
-  const Page = pages[page].component
-
-  const pageNames = Object.keys(pages)
+  const Page = pages[page].component  
 
   return(
-    <>
-      {
-        pageNames.map( page => <button onClick={ () => handleChangePage(page) }>{ pages[page].text }</button> )
-      }
-
+       
+    <Template pages={pages} activePage={page} onChangePage={handleChangePage}>
       { Page && <Page /> }
-    </>
+    </Template>      
+    
   )
 }
 

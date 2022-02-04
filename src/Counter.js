@@ -16,13 +16,15 @@ const Counter = () => {
 
         setContador(novoValor)    
     }
-
+    
     return(
-        <div className="counter">
-            <span>{contador}</span>
-            <button onClick={() => handleOnCLick('-')}>-</button>
-            <button onClick={() => handleOnCLick('+')}>+</button>
-        </div>
+        <>            
+            <div className="counter">
+                <span>{contador}</span>
+                <button onClick={() => handleOnCLick('-')}>-</button>
+                <button onClick={() => handleOnCLick('+')}>+</button>
+            </div>
+        </>
     )
 }
 
